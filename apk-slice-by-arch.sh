@@ -30,8 +30,7 @@ for ARCH in armeabi armeabi-v7a mips x86; do
 	mkdir $TMPDIR
 	unzip -qq $ORIGINAL_APK -d $TMPDIR
 	rm -rf $TMPDIR/META-INF
-	cd $TMPDIR/lib
-	rm -rf !($ARCH)
+	cd $TMPDIR/lib && rm -rf !($ARCH)
 	cd - &>/dev/null
 
 	# Modifying the version code
